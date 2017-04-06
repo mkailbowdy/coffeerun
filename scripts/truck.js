@@ -19,6 +19,17 @@
         this.db.remove(customerId);
     };
 
+    Truck.prototype.printOrders = function() {
+        var customerIdArray = Object.keys(this.db.getAll()); // an array of strings that are the 'id's.
+        console.log('Truck #' + this.truckId + ' has pending orders:');
+        customerIdArray.forEach(function(id) {
+            console.log(this.db.get(id));
+        }.bind(this));
+        // Look up .bind(this) in the debugging section in book. every function has a 'this' property, however in a callback funciton it is not assigned an object, unlike constructor and prototype functions.
+        // In this case, we have to call bind(this) on the callback because 'this' is assigned to the Truck object in that scope.
+        // .bind(this) creates a modified version of the anonymous callback function where the OWNER of the function call is the Truck instance. This means that 'this' refers to the truck instance.
+    };
+
     App.Truck = Truck;
     window.App = App;
 
