@@ -12,7 +12,7 @@
     // prototypes are pretty much class variables and methods. available to all instances.
     // Here we give DataStore.prototype the 'add' property. 'add' will be a function.
     DataStore.prototype.add = function(key, val) {
-        // key is the customer's email address, val is the cost of the coffee.
+        // key is the customer's email address, val is the object containing the email address and coffee in.
         this.data[key] = val;
     };
 
@@ -30,7 +30,7 @@
     }
 
 
-    App.DataStore = DataStore; // Attaches DataStore function to App
-    window.App = App; // Reassigns App to the window.
+    App.DataStore = DataStore; // Add the DataStore constructor and its prototypes.
+    window.App = App; // Reassigns App to the window///Export all this code to window.App
 
 })(window);

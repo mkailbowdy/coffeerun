@@ -30,7 +30,7 @@
         // .bind(this) creates a modified version of the anonymous callback function where the OWNER of the function call is the Truck instance. This means that 'this' refers to the truck instance.
     };
 
-    App.Truck = Truck;
-    window.App = App;
+    App.Truck = Truck; // Add the Truck constructor and its prototypes.
+    window.App = App; //Export all this code to window.App
 
 })(window);
