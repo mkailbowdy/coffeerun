@@ -1,6 +1,7 @@
 (function(window) {
     'use strict';
     var App = window.App || {};
+    // var examplePrivateVariable = "This is private. only available to this module and nothing else, even the console."
 
     function Truck(truckId, db) {
         this.truckId = truckId; // Truck objects/instances now have a truckId instance variable
