@@ -26,9 +26,7 @@
 
     DataStore.prototype.remove = function(key) {
         delete this.data[key]; // Delete operator removes a key/value pair from an object.
-
     }
-
 
     App.DataStore = DataStore; // Add the DataStore constructor and its prototypes.
     window.App = App; // Reassigns App to the window///Export all this code to window.App
