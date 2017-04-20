@@ -20,7 +20,7 @@
     }
     // Instead of hardcoding the submit handler code, we'll make a method that accepts a function argument, adds the submit listener, then calls the function agument inside that listener
     // Instead of addEventListener, we used jQuery's 'on' method
-    FormHandler.prototype.addSubmitHandler = function() {
+    FormHandler.prototype.addSubmitHandler = function(fn) {
         console.log('Setting submit handler for form');
         this.$formElement.on('submit', function(event) {
             event.preventDefault();
@@ -33,6 +33,9 @@
                 console.log(item.name + ' is ' + item.value);
             });
             console.log(data);
+            fn(data); // 'fn' is Truck.createOrder(object);
+            this.reset(); // resets form to blank state.
+            this.elements[0].focus(); // elements is a property of the selector. it is an array of the form's fields, which we refer to using indices.
         });
     };
 
